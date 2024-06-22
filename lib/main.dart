@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappscreen/whatsappscree.dart';
-import 'package:whatsappscreen/whatsappsecond.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       // theme: ThemeData(colorScheme: ColorScheme.dark()),
