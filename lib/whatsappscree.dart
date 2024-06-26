@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappscreen/chatscreen.dart';
 import 'package:whatsappscreen/whatsappsecond.dart';
 
 class Whatsappscreen extends StatefulWidget {
@@ -36,7 +37,7 @@ class _WhatsappscreenState extends State<Whatsappscreen> {
         ),
         body: SingleChildScrollView(
           child: Column(children: [
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 icon: Padding(
                   padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -52,40 +53,45 @@ class _WhatsappscreenState extends State<Whatsappscreen> {
                 shrinkWrap: true,
                 itemCount: a,
                 itemBuilder: (context, index) {
-                  return Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Row(children: [
-                        CircleAvatar(
-                          backgroundImage: NetworkImage(
-                              "https://placehold.co/600x400/EEE/31343C",
-                              scale: 1.0),
-                          backgroundColor: Color.fromARGB(255, 17, 157, 134),
-                          radius: MediaQuery.of(context).size.width * 0.055,
-                        ),
-                        const Column(children: [
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(30, 10, 0, 0),
-                            child: Text(
-                              "Rasalu",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
+                  return TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Chatscreen()));
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Row(children: [
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage("assets/images/image1.png"),
+                            backgroundColor: Color.fromARGB(255, 17, 157, 134),
+                            radius: MediaQuery.of(context).size.width * 0.055,
                           ),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: Text(
-                              "Hii!",
-                              style: TextStyle(color: Colors.black),
+                          const Column(children: [
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(30, 10, 0, 0),
+                              child: Text(
+                                "Rasalu",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                              child: Text(
+                                "Hii!",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ),
+                          ]),
+                          Spacer(),
+                          const Text(
+                            "Yesterday",
+                            style: TextStyle(color: Colors.black),
                           ),
                         ]),
-                        Spacer(),
-                        const Text(
-                          "Yesterday",
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      ]));
+                      ));
                 }),
           ]),
         ),

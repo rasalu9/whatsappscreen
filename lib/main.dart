@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappscreen/chatscreen.dart';
+import 'package:whatsappscreen/diaglogbox.dart';
+
 import 'package:whatsappscreen/whatsappscree.dart';
 
 void main() {
@@ -11,12 +14,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       // theme: ThemeData(colorScheme: ColorScheme.dark()),
-      home: Whatsappscreen(),
+      home: Chatscreen(),
     );
   }
 }
